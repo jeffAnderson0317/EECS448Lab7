@@ -42,7 +42,6 @@ public class matrix {
 				inv.mdata[i][j] = Math.pow(-1.0, (double)i + j) * subMatrix(j, i).determinant() / det;
 			}
 		}
-		System.out.println(inv.toString());
 		return inv;
 	}
 	//Submatrix method for matrix
