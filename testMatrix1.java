@@ -50,8 +50,17 @@ public class testMatrix1 {
 				m.mdata[i][j] = matrix[i][j];
 			}
 		}
+		
+		matrix sub = m.subMatrix(0,0);
+		String submatrix = "";
+		for (int i = 0; i < 2; i++){
+			for (int j = 0; j < 2; j++){
+				submatrix += sub.mdata[i][j] + " ";
+			}
+		}
+		
 		//Check if submatrix works.
-		assertTrue("9.0 1.0 \n5.0 3.0" == m.subMatrix(0,0).toString());
+		assertTrue(submatrix.equals("5.0 2.0 3.0 -1.0 "));
 	}
 	@Test
 	public void testInverse() {
@@ -74,8 +83,17 @@ public class testMatrix1 {
 				m.mdata[i][j] = matrix[i][j];
 			}
 		}
+		matrix inv = m.inverse();
+		
+		String inverse = "";
+		for (int i = 0; i < 3; i++){
+			for (int j = 0; j < 3; j++){
+				inverse += inv.mdata[i][j] + " ";
+			}
+		}
+		
 		//Check if inverse is working
-		assertTrue(" 0.14102564102564102 -0.15384615384615385 -0.16666666666666666 \n0.01282051282051282 0.07692307692307693 0.16666666666666666 \n-0.24358974358974358 0.5384615384615384 -0.16666666666666666 " == m.inverse().toString());
+		assertTrue(inverse.equals("0.14102564102564102 -0.15384615384615385 -0.16666666666666666 0.01282051282051282 0.07692307692307693 0.16666666666666666 -0.24358974358974358 0.5384615384615384 -0.16666666666666666 "));
 
 	}
 	
