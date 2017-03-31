@@ -3,13 +3,13 @@ package example;
 public class matrix {
 	private static int n = 10;
 	private final static int MaxSize = 10;
-	static double mdata[][] = new double[MaxSize][MaxSize];
+	private double mdata[][] = new double[MaxSize][MaxSize];
 	
 	public matrix(int m){
 		n = m;
 	}
 	
-	public static double determinant(){
+	public double determinant(){
 		double det = 0.0;
 		
 		if (n == 1)
@@ -45,7 +45,7 @@ public class matrix {
 		
 		return inv;
 	}
-	public static matrix subMatrix (int r, int c){
+	public matrix subMatrix (int r, int c){
 		matrix sub = new matrix(n - 1);
 		
 		int row = 0; 
