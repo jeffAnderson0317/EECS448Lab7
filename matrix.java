@@ -8,7 +8,7 @@ public class matrix {
 	public matrix(int m){
 		n = m;
 	}
-	
+	// Determinant method for matrix
 	public double determinant(){
 		double det = 0.0;
 		
@@ -30,7 +30,7 @@ public class matrix {
 		
 		return det;
 	}
-	
+	//Inverse method for matrix
 	public matrix inverse(){
 		matrix inv = new matrix(n);
 		double det = determinant();
@@ -42,9 +42,10 @@ public class matrix {
 				inv.mdata[i][j] = Math.pow(-1.0, (double)i + j) * subMatrix(j, i).determinant() / det;
 			}
 		}
-		
+		System.out.println(inv.toString());
 		return inv;
 	}
+	//Submatrix method for matrix
 	public matrix subMatrix (int r, int c){
 		matrix sub = new matrix(n - 1);
 		int row = 0; 
@@ -63,9 +64,9 @@ public class matrix {
 			
 			row++;
 		}
-		
 		return sub;
 	}
+	//String method for matrix to print out matrix
 	public String toString(){
 		String sm = "";
 		for (int i = 0; i < n; i++){
